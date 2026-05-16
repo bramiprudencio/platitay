@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --surface: #f8f9fa;
+  --surface-dim: #d9dadb;
+  --surface-bright: #f8f9fa;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f3f4f5;
+  --surface-container: #edeeef;
+  --surface-container-high: #e7e8e9;
+  --surface-container-highest: #e1e3e4;
+  --on-surface: #191c1d;
+  --on-surface-variant: #454652;
+  --inverse-surface: #2e3132;
+  --inverse-on-surface: #f0f1f2;
+  --outline: #757684;
+  --outline-variant: #c5c5d4;
+  --surface-tint: #4355b9;
+  --primary: #24389c;
+  --on-primary: #ffffff;
+  --primary-container: #3f51b5;
+  --on-primary-container: #cacfff;
+  --inverse-primary: #bac3ff;
+  --secondary: #006e2a;
+  --on-secondary: #ffffff;
+  --secondary-container: #5cfd80;
+  --on-secondary-container: #00732c;
+  --tertiary: #313e7e;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #495697;
+  --on-tertiary-container: #c9d0ff;
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+  --background: #f8f9fa;
+  --on-background: #191c1d;
+
+  --font-family: 'Inter', sans-serif;
+  
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --spacing-unit: 4px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --container-margin: 16px;
+  
+  --shadow-level-1: 0px 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-level-2: 0px 10px 20px rgba(63, 81, 181, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background);
+  color: var(--on-background);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Utility Classes */
+.headline-lg { font-size: 32px; font-weight: 700; line-height: 40px; letter-spacing: -0.02em; }
+.headline-md { font-size: 20px; font-weight: 600; line-height: 28px; }
+.body-lg { font-size: 18px; font-weight: 400; line-height: 28px; }
+.body-md { font-size: 16px; font-weight: 400; line-height: 24px; }
+.body-sm { font-size: 14px; font-weight: 400; line-height: 20px; }
+.label-md { font-size: 12px; font-weight: 600; line-height: 16px; letter-spacing: 0.05em; text-transform: uppercase; }
+
+/* Layout App Container for Mobile Frame */
+.app-container {
+  width: 100%;
+  max-width: 480px; /* Mobile width constraint */
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--background);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-area {
+  flex: 1;
+  padding: var(--container-margin);
+  padding-bottom: calc(var(--spacing-xl) * 2.5); /* Space for bottom nav */
+}

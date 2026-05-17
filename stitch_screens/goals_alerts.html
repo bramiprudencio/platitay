@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "secondary": "#006e2a",
+                        "on-secondary-fixed": "#002108",
+                        "surface-variant": "#e1e3e4",
+                        "on-error": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "surface-bright": "#f8f9fa",
+                        "primary": "#24389c",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-fixed": "#dee0ff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#c9d0ff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#00531e",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#313e7e",
+                        "on-primary": "#ffffff",
+                        "outline": "#757684",
+                        "primary-container": "#3f51b5",
+                        "on-secondary-container": "#00732c",
+                        "secondary-fixed": "#69ff87",
+                        "on-primary-container": "#cacfff",
+                        "surface-container-highest": "#e1e3e4",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#dee1ff",
+                        "on-tertiary-fixed-variant": "#354282",
+                        "inverse-primary": "#bac3ff",
+                        "surface-tint": "#4355b9",
+                        "outline-variant": "#c5c5d4",
+                        "primary-fixed-dim": "#bac3ff",
+                        "on-primary-fixed": "#00105c",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-low": "#f3f4f5",
+                        "on-surface-variant": "#454652",
+                        "on-background": "#191c1d",
+                        "tertiary-container": "#495697",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed-dim": "#3ce36a",
+                        "tertiary-fixed-dim": "#b9c3ff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#5cfd80",
+                        "surface-dim": "#d9dadb",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#021355",
+                        "on-primary-fixed-variant": "#293ca0",
+                        "background": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "xl": "32px",
+                        "gutter": "12px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "container-margin": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background flex justify-between items-center w-full px-container-margin h-14 sticky top-0 z-40">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Profile" data-alt="A professional headshot of a young entrepreneur in a minimalist studio setting. The lighting is soft and high-key, emphasizing a clean and reliable brand image. The background is a muted, solid gray that aligns with a corporate modern aesthetic. The subject has a confident and approachable expression, representing the user-centric focus of the Platitay platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiC1WPuDx4dZheQs2J2WvEIr6Hz5eaiNHJq8LrZ5SqbIGbgjoYhgDQAgsABSDZvPug7hVVoz-KPQGF1bQRYWxjbhBSkLkHBLWUEzspAQ4pEg0UL8N7a37ckSssVyigxwlrIimicoYojTfwQ_gTrBM-8l1zdlPE8elDgO9Zv4olXeIzhhcp2MdcJvujDUyYs1mE8it4T03KYc18RF3QpINQBtfe9iIdNp8jOW7CL5fXnjbFQzc-03dsdr0N4Vcqsjjs5YepXRgZGSU">
+</div>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary dark:text-primary-fixed">Platitay</h1>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 duration-100">
+            notifications
+        </button>
+</header>
+<main class="px-container-margin pt-md">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-xl">
+<div>
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Financial Health</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mt-xs">Goals &amp; Alerts</h2>
+</div>
+<button class="bg-primary text-on-primary px-md py-sm rounded-xl font-label-md text-label-md flex items-center gap-2 shadow-md hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Create New Goal
+            </button>
+</div>
+<!-- Bento Grid: Active Goals -->
+<section class="space-y-md mb-xl">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md">Active Goals</h3>
+<span class="text-primary font-label-md text-label-md">View All</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Goal Card 1 -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0px_2px_8px_rgba(0,0,0,0.04)] border border-outline-variant/30 relative overflow-hidden">
+<div class="flex justify-between items-start mb-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">directions_bike</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md leading-tight">New Bike</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mountain Explorer Pro</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-secondary bg-secondary-container/20 px-sm py-xs rounded-lg">82%</span>
+</div>
+<div class="space-y-xs mb-md">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface-variant">Reserved</span>
+<span class="text-on-surface">$1,250.00 / $1,500.00</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">Estimated completion: 2 weeks</p>
+</div>
+<!-- Goal Card 2 -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0px_2px_8px_rgba(0,0,0,0.04)] border border-outline-variant/30">
+<div class="flex justify-between items-start mb-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">flight</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md leading-tight">Travel</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Summer in Japan</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-tertiary bg-tertiary-fixed/40 px-sm py-xs rounded-lg">45%</span>
+</div>
+<div class="space-y-xs mb-md">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface-variant">Reserved</span>
+<span class="text-on-surface">$2,250.00 / $5,000.00</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">Next contribution: Tomorrow</p>
+</div>
+</div>
+</section>
+<!-- Alerts & Limits Section -->
+<section class="space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md">Alerts &amp; Limits</h3>
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-md border border-outline-variant/20">
+<!-- Limit Item 1 -->
+<div class="flex items-center justify-between py-md border-b border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">theater_comedy</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold">Entertainment</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">$245.50 of $300.00</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md text-error">Near Limit</p>
+<div class="w-24 h-1.5 bg-surface-container rounded-full mt-1">
+<div class="bg-error h-full rounded-full" style="width: 81%"></div>
+</div>
+</div>
+</div>
+<!-- Limit Item 2 -->
+<div class="flex items-center justify-between py-md border-b border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">restaurant</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold">Dining Out</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">$112.00 of $400.00</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md text-secondary">Healthy</p>
+<div class="w-24 h-1.5 bg-surface-container rounded-full mt-1">
+<div class="bg-secondary h-full rounded-full" style="width: 28%"></div>
+</div>
+</div>
+</div>
+<!-- Limit Item 3 -->
+<div class="flex items-center justify-between py-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">shopping_cart</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold">Groceries</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">$550.00 of $600.00</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md text-error">Critical</p>
+<div class="w-24 h-1.5 bg-surface-container rounded-full mt-1">
+<div class="bg-error h-full rounded-full" style="width: 92%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Set New Limit Promotion -->
+<div class="bg-primary-container text-on-primary-container p-md rounded-xl flex items-center gap-4 mt-lg">
+<span class="material-symbols-outlined text-[32px]">security</span>
+<div>
+<p class="font-body-md text-body-md font-bold">Stay within your budget</p>
+<p class="font-body-sm text-body-sm opacity-90">Enable smart notifications to get alerted when you reach 80% of any category limit.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-xs py-sm border-t border-outline-variant/20 bg-surface dark:bg-on-background shadow-md z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-md py-xs hover:bg-surface-container dark:hover:bg-surface-variant transition-colors active:scale-95 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-md py-xs hover:bg-surface-container dark:hover:bg-surface-variant transition-colors active:scale-95 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span class="font-label-md text-label-md">Pay</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-md py-xs hover:bg-surface-container dark:hover:bg-surface-variant transition-colors active:scale-95 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Debts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-md py-xs hover:bg-surface-container dark:hover:bg-surface-variant transition-colors active:scale-95 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-label-md text-label-md">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed-dim text-on-primary-container dark:text-on-primary-fixed rounded-xl px-md py-xs hover:bg-surface-container dark:hover:bg-surface-variant transition-colors active:scale-95 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">target</span>
+<span class="font-label-md text-label-md">Goals</span>
+</a>
+</nav>
+</body></html>

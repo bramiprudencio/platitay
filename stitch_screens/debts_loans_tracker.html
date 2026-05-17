@@ -1,0 +1,281 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Debts &amp; Loans Tracker - Platitay</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "secondary": "#006e2a",
+                        "on-secondary-fixed": "#002108",
+                        "surface-variant": "#e1e3e4",
+                        "on-error": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "surface-bright": "#f8f9fa",
+                        "primary": "#24389c",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-fixed": "#dee0ff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#c9d0ff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#00531e",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#313e7e",
+                        "on-primary": "#ffffff",
+                        "outline": "#757684",
+                        "primary-container": "#3f51b5",
+                        "on-secondary-container": "#00732c",
+                        "secondary-fixed": "#69ff87",
+                        "on-primary-container": "#cacfff",
+                        "surface-container-highest": "#e1e3e4",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#dee1ff",
+                        "on-tertiary-fixed-variant": "#354282",
+                        "inverse-primary": "#bac3ff",
+                        "surface-tint": "#4355b9",
+                        "outline-variant": "#c5c5d4",
+                        "primary-fixed-dim": "#bac3ff",
+                        "on-primary-fixed": "#00105c",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-low": "#f3f4f5",
+                        "on-surface-variant": "#454652",
+                        "on-background": "#191c1d",
+                        "tertiary-container": "#495697",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed-dim": "#3ce36a",
+                        "tertiary-fixed-dim": "#b9c3ff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#5cfd80",
+                        "surface-dim": "#d9dadb",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#021355",
+                        "on-primary-fixed-variant": "#293ca0",
+                        "background": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "xl": "32px",
+                        "gutter": "12px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "container-margin": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab-indigo { border-bottom: 2px solid #24389c; color: #24389c; }
+        .active-tab-green { border-bottom: 2px solid #006e2a; color: #006e2a; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background flex justify-between items-center w-full px-container-margin h-14 sticky top-0 z-50">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-primary-container flex items-center justify-center">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional studio portrait of a friendly man with a warm smile, wearing a clean white shirt. The background is a soft, out-of-focus modern office setting with cool blue and neutral gray tones. The lighting is bright and airy, reflecting a professional and trustworthy fintech user persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRDOseoyt7qKscRevI07zR6AUNLspmP4aZL_uCU5ylAv33maZHk_vkvjeDfha6qUoMyIK9HQ5TEFujMb_qjNCe3YxLsjb_xywOEklcFsbtq5H08hA6oLiPR6BEyF0vtAWiMDEpjOPPHaTAFeyDTk2iiLusa4CCTvF--z5Mnr-1aw5bt0w2PyQO9kE31QGgy55FxRUu9plkSR1_JvqXLV40m_baIVlWMAXfvPf-PkZXzaFqHF-1U520AWj05RLE3sloUzET9klSnU0">
+</div>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary dark:text-primary-fixed">Platitay</h1>
+</div>
+<button class="hover:opacity-80 transition-opacity p-xs">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">notifications</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-grow px-container-margin pb-32">
+<!-- Summary Bento Grid -->
+<section class="mt-md grid grid-cols-2 gap-sm">
+<div class="col-span-2 bg-surface-container-lowest p-md rounded-xl shadow-[0px_2px_8px_rgba(0,0,0,0.04)] border border-outline-variant/30 overflow-hidden relative">
+<div class="relative z-10">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Total Balance</p>
+<h2 class="font-headline-lg text-headline-lg-mobile text-on-surface mt-xs">$1,240.50</h2>
+<div class="flex items-center gap-xs mt-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<span class="font-label-sm text-label-sm">8% increase this month</span>
+</div>
+</div>
+<div class="absolute top-0 right-0 p-md opacity-10">
+<span class="material-symbols-outlined text-[80px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="bg-primary-container/10 p-md rounded-xl border border-primary-container/20">
+<p class="font-label-sm text-label-sm text-primary font-bold">I Owe</p>
+<p class="font-headline-md text-headline-md text-primary mt-xs">$450.00</p>
+</div>
+<div class="bg-secondary-container/10 p-md rounded-xl border border-secondary-container/20">
+<p class="font-label-sm text-label-sm text-secondary font-bold">Owed to Me</p>
+<p class="font-headline-md text-headline-md text-secondary mt-xs">$1,690.50</p>
+</div>
+</section>
+<!-- Tab Interface -->
+<div class="mt-xl flex w-full border-b border-outline-variant/30">
+<button class="flex-1 py-md font-label-md text-label-md text-center active-tab-green transition-all">
+                Owed to Me
+            </button>
+<button class="flex-1 py-md font-label-md text-label-md text-center text-on-surface-variant hover:bg-surface-variant/20 transition-all">
+                I Owe
+            </button>
+</div>
+<!-- Pending Debts List -->
+<div class="mt-md space-y-sm">
+<p class="font-label-md text-label-md text-on-surface-variant px-xs mb-xs">Pending (4)</p>
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-md bg-surface-container-lowest rounded-xl shadow-[0px_2px_8px_rgba(0,0,0,0.04)] hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+<img alt="Contact" class="w-full h-full object-cover rounded-xl" data-alt="A portrait of a smiling young woman with dark hair and bright eyes, wearing a mustard yellow sweater. The image is set against a clean, minimal interior with soft natural lighting and a shallow depth of field. The overall aesthetic is warm, modern, and trustworthy, perfectly suited for a high-end financial application's contact list." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyVhBLyMrZzkus8yr7rSwxdcldJbrlOS8IRx2vttq60Q4xD7H1HxQAg1v15iug1rXs5EOffZlORfyc1bYgd3IyfCppes841W_a7FsbDnhzS2GJ8fRnvtYjx0iTEhTtpnvi-WyjZZgj1arB7aw8use-CAPjqIjV7Her0TwDxjfOeZn2CWM1Ezyopa15LRStn7B0rAzfIv6oD-NtmUIXvdB-YxEXovgOo1mLGTz4HntSMQNBUOpEadcpeKlAZ5VSZAwB91thjWP4CJc">
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Sarah Johnson</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Due: Oct 24, 2023</p>
+</div>
+</div>
+<div class="text-right flex items-center gap-lg">
+<div>
+<p class="font-body-md text-body-md font-bold text-secondary">+$320.00</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Rent split</p>
+</div>
+<button class="flex items-center justify-center p-sm bg-secondary/5 text-secondary rounded-lg hover:bg-secondary/10 active:scale-95 duration-100">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-md bg-surface-container-lowest rounded-xl shadow-[0px_2px_8px_rgba(0,0,0,0.04)] hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+<img alt="Contact" class="w-full h-full object-cover rounded-xl" data-alt="A close-up headshot of a middle-aged man with short beard and glasses, looking thoughtful and professional. He is wearing a dark navy blazer over a light blue shirt. The background is a modern, minimalist architectural space with soft, natural side lighting, creating a high-quality, corporate-friendly appearance for a debt tracking application contact." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALz2H_DSvkfPRI1GPFHfHjoPWbo8O1PfEgHhSDq0pm6P2z3791jnSWTjXTcdQp1linKkSOhN_KkxiimUf7CKFx2y7-oTy52GPPjBvGH5HBFvF3-P3S3cH5fQ8hTy4UzuCuye1H2Wr_xNPQvafHF5y0Y3Dx8cCE_0ORqsHdk7D041UtsparVW6-ch7Qq1ifIueaj71EjxVXglGgmv0VnNcXefrpKdrMEYp08y9BW5RyeEgkZUSq4-xBnsr1JI-USXq1fMQYDyRNJU8">
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Marcus Chen</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Due: Oct 28, 2023</p>
+</div>
+</div>
+<div class="text-right flex items-center gap-lg">
+<div>
+<p class="font-body-md text-body-md font-bold text-secondary">+$1,200.00</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Loan payoff</p>
+</div>
+<button class="flex items-center justify-center p-sm bg-secondary/5 text-secondary rounded-lg hover:bg-secondary/10 active:scale-95 duration-100">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-md bg-surface-container-lowest rounded-xl shadow-[0px_2px_8px_rgba(0,0,0,0.04)] hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+<img alt="Contact" class="w-full h-full object-cover rounded-xl" data-alt="A professional portrait of a woman with a confident expression, wearing a tailored charcoal grey blazer. She has her hair styled neatly and is positioned against a clean, bright white background with soft shadows. The lighting is diffused and high-key, emphasizing a clean, corporate, and modern aesthetic suitable for a financial services platform's user interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5ot3Q8MB5ADqiVX5tHCswpibsmeAyVnXCI5a5P_TDFrYbv5ovny9E8W1Gm_7nRVvgVpjUp5PNTyvD9KQC3M2sLXVUxrnJxyl_Jd8ecgLHOuVmgQIj_j8GHJMWcNkgC-AIDp7CdhYhxkVMWAWAdJ2wJzEp2sl0cE4g1uqXJzG8hGTm1_e4BjzHmXENGb6fCpPKr0I8_FzPatq1Ozos7-mAWWYnoNexC6VBdTwXuefVVXKgN59wxu_Z2NBIqLQXDE9gsrTZoLsnS5A">
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Elena Rodriguez</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-error">Overdue: Oct 15</p>
+</div>
+</div>
+<div class="text-right flex items-center gap-lg">
+<div>
+<p class="font-body-md text-body-md font-bold text-secondary">+$145.50</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Dinner split</p>
+</div>
+<button class="flex items-center justify-center p-sm bg-secondary/5 text-secondary rounded-lg hover:bg-secondary/10 active:scale-95 duration-100">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</button>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center justify-between p-md bg-surface-container-lowest rounded-xl shadow-[0px_2px_8px_rgba(0,0,0,0.04)] hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">person</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">David Miller</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Due: Nov 02, 2023</p>
+</div>
+</div>
+<div class="text-right flex items-center gap-lg">
+<div>
+<p class="font-body-md text-body-md font-bold text-secondary">+$25.00</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Coffee</p>
+</div>
+<button class="flex items-center justify-center p-sm bg-secondary/5 text-secondary rounded-lg hover:bg-secondary/10 active:scale-95 duration-100">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-24 right-container-margin w-14 h-14 bg-primary text-on-primary rounded-xl shadow-[0px_10px_20px_rgba(63,81,181,0.08)] flex items-center justify-center active:scale-95 duration-200 z-40">
+<span class="material-symbols-outlined">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-xs py-sm border-t border-outline-variant/20 bg-surface dark:bg-on-background shadow-md z-50">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-md py-xs hover:bg-surface-container dark:hover:bg-surface-variant transition-colors active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-md py-xs hover:bg-surface-container dark:hover:bg-surface-variant transition-colors active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span class="font-label-md text-label-md">Pay</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed-dim text-on-primary-container dark:text-on-primary-fixed rounded-xl px-md py-xs active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Debts</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-md py-xs hover:bg-surface-container dark:hover:bg-surface-variant transition-colors active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-label-md text-label-md">Stats</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-md py-xs hover:bg-surface-container dark:hover:bg-surface-variant transition-colors active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined">target</span>
+<span class="font-label-md text-label-md">Goals</span>
+</button>
+</nav>
+</body></html>
